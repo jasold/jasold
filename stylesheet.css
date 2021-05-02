@@ -4,61 +4,60 @@
       body {
         margin: 0;
       }
-	  
-	  
+.titre	{
+		  background-color : orange;
+		  height : 50px;
+		  text-align: center;
+		  font-size: 30px;
+	  }  
+      
+
       h1 {
         text-align: center;
-        color: white;
-        line-height: 100px;
+        line-height: 50px;
         margin: 0;
       }
 	  
-	  h1 a {
+	  h2 a {
 			margin: 150px;
-			}
+			}	    
 
       article {
         padding: 5px;
         margin: 5px;
         background: #BBD2E1;
-/*		height : 750px;*/
       }
+
+    ul		{  
+		padding-left: 5px;
+	}
 
       section {
         display: flex;
-		justify-content;
-		height : 800px;
+		height : 750px;
+		font-family :sans-serif; 
       }
-
-      article {
-        flex: 1 200px;
+	   article:nth-of-type(1) {
+        flex: 1 100px;
+       
       }
-
       article:nth-of-type(2) {
-        flex: 5 500px;
+        flex: 7 500px;
         display: flex;
-        flex-flow: column;		
+        flex-flow: column;
+				
 		}
 	
 	  article:nth-of-type(3) {
         flex: 1 100px;
-        display: flex;
-        flex-flow: column;
+       
       }
 
-      article:nth-of-type(3) div:first-child {
+      article:nth-of-type(4) {
         flex: 1 100px;
         display: flex;
-        flex-flow: column;
-        align-items: center;
-        
-      }
-	article:nth-of-type(4) {
-        flex: 1 100px;
-        display: flex;
-        flex-flow: column;
-		height : 800px;
-      }
+	  }
+
       button {
         flex: 1 auto;
         margin: 5px;
@@ -67,6 +66,10 @@
       }
       a:hover {
 		color : red;
+	  }
+	  li img {
+		  display :	block;
+		  margin :	auto;
 	  }
 
 .lumopac {
