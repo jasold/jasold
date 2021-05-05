@@ -4,6 +4,13 @@
     margin: 0;
 	font-family: cursive;
       }
+.frame {
+      border: 3px solid #d87c68;
+      background: #eee; 
+      margin: auto;
+      padding: 15px 15px;
+      }
+      
 .titre	{
 	background-color : orange;
 	height : 50px;
