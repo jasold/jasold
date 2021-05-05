@@ -20,8 +20,6 @@ function getValue() {
 /*on limite la taille image à 700px*/		
 	if (h>700) alert ("trop élevée");
 	
-/*	on appelle la fonction "importation"*/
-	importFileandPreview(h);
 }
 </script>
  <body>  
@@ -30,7 +28,7 @@ function getValue() {
 			<div style="padding:3px;">
 				<h1> Palette et Vignettes</h1>
 		
-				<p><b>Sur palette : </b><br><br>8 zones cliquables pour 8 vignettes<br>1 filtre par vignette <br>1 click sur zone -> 1(vignette + 1 filtre)<br>1 autre click -> réinitialise filtre<br>souris sur vignette -> autre image</p>		
+				<p><b>Sur palette : </b><br>8 zones cliquables pour 8 vignettes<br>1 filtre par vignette <br>1 click sur zone -> 1(vignette + 1 filtre)<br>1 autre click -> réinitialise filtre<br>souris sur vignette -> autre image</p>		
 			</div>
 
 <!--8 zones cliquables sur la palette de couleurs sont faites avec Gimp, le code map est ici. Chaque area declenche une fonction JS (changeVignette)et un parametre qui depend de la zone mais qui sert au choix de la vignette et du filtre qui va avec -->
@@ -79,7 +77,7 @@ function getValue() {
 <!--accès par "input" et type (file) aux fichiers utilisateur, on masque le "input" et on associe un "label" plus beau. On déclenche par click la fonction "import" qui importera le fichier choisi sur ordi utilisateur-->
 			<input type="file" id="fileElem" accept="image/*" style ="display:none" onchange = "importFileandPreview(h)"><label for = "fileElem">Importer votre image</label>
 			
-			<a href="adr"  download >Téléchargement</a>						 
+			<button onclick="telecharge()">Téléchargement</button>						 
 		</div>
 		
 <!--photos importée	se placeront ici, "Id new" servira à la fonction "changeClass", la class "lst" à identifier element pour le fichier importé. On applique sur image par la classe "frame" un cadre (voir css)-->			
@@ -273,6 +271,10 @@ function changeVignette(idee)
 		}
 }
 </script>
+<script>
+function telecharge(){
+	download("adr","telfile.jpg");
+}
 </body>
 </html>
 
