@@ -5,13 +5,22 @@
 	<link type="text/css" rel="stylesheet" href="stylesheet.css" >
     <title>Filtrage Photos</title> 
   </head>
-  
+   
   <!--getValue()permet récupérer la taille "h" image definie par utilisateur,limitee à 600 px-->
 <script>
 var h = 700;
 function getValue() {
-    h = document.getElementById("in").value;	
+    h = document.getElementById("in").value;
+/*pour modifier taille image meme sur la photo par défaut, on crée sur élément "new" une variable "carImg"*/
+	var carImg = document.getElementById("new");
+	
+/*on lui donne la valeur "h" qui est à 700 px mais qu'on peut modifier comme images importées*/
+		carImg.width = h;
+		
+/*on limite la taille image à 700px*/		
 	if (h>700) alert ("trop élevée");
+	
+/*	on appelle la fonction "importation"*/
 	importFileandPreview(h);
 }
 </script>
@@ -70,13 +79,13 @@ function getValue() {
 <!--accès par "input" et type (file) aux fichiers utilisateur, on masque le "input" et on associe un "label" plus beau. On déclenche par click la fonction "import" qui importera le fichier choisi sur ordi utilisateur-->
 			<input type="file" id="fileElem" accept="image/*" style ="display:none" onchange = "importFileandPreview(h)"><label for = "fileElem">Importer votre image</label>
 			
-			<a href="adr"  download >Téléchargement</a>
-			
-			 
-		</div>		
-
-<!--photos importée	se placeront ici, "Id new" servira à la fonction "changeClass", la class "lst" à identifier element pour le fichier importé-->			<img id="new" class="lst" src="phototest.jpg" width="700" height="auto" border="0">			
-
+			<a href="adr"  download >Téléchargement</a>						 
+		</div>
+		
+<!--photos importée	se placeront ici, "Id new" servira à la fonction "changeClass", la class "lst" à identifier element pour le fichier importé. On applique sur image par la classe "frame" un cadre (voir css)-->			
+		<div class="frame">
+			<img id="new" class="lst" src="phototest.jpg"  width="700" height="auto" border="0"
+		</div>
 	</article>
 	<article>
 
