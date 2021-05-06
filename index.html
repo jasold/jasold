@@ -72,12 +72,16 @@ function getValue() {
 			<input type="text" placeholder="Image =< 700 px" id="in">
 			
 <!--le bouton sert àdéclencher "getValue() pour saisir la taille "h"-->			
-			<button type="button" class="btn -sm" onclick="getValue();">Validez la taille</button><br><br>
+			<button class="bouton" onclick="getValue();">Validez la taille</button><br><br>
 			
 <!--accès par "input" et type (file) aux fichiers utilisateur, on masque le "input" et on associe un "label" plus beau. On déclenche par click la fonction "import" qui importera le fichier choisi sur ordi utilisateur-->
 			<input type="file" id="fileElem" accept="image/*" style ="display:none" onchange = "importFileandPreview(h)"><label for = "fileElem">Importer votre image</label>
 			
-			<button onclick="telecharge()">Téléchargement</button>						 
+			<button class="mybouton" onclick="telecharge()">Téléchargement</button>
+<!--			<form>
+				<input type="button" display="none" value="Telechargement" onclick="telecharge()">
+				</form>	-->
+				
 		</div>
 		
 <!--photos importée	se placeront ici, "Id new" servira à la fonction "changeClass", la class "lst" à identifier element pour le fichier importé. On applique sur image par la classe "frame" un cadre (voir css)-->			
@@ -272,8 +276,16 @@ function changeVignette(idee)
 }
 </script>
 <script>
-function telecharge(){
-	download(adr,"telfile.jpg");
+/*utiliser balise ancre <a href="" /> non liée au DOM, donc ne fait pas partie de la structure HTML du projet mais existe (fonction importFile, preview.src=adr)comme objet JavaScript*/
+function telecharge()
+{
+var name="fichier tele";
+  const anchor = document.createElement('a')
+  anchor.href = adr;
+/*on attribue un nom au fichier créé par téléchargement*/  
+  anchor.download = name;
+/*le telechargement se fait */  
+  anchor.click();
 }
 </script>
 </body>
