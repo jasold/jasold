@@ -124,7 +124,8 @@ la classe servira à définir le filtre pour "(idee)" choisi-->
 
 <!--code pour uploader image depuis ordi.la fonction passe taille image, la valeur de "h" defini par utilisateur dans "getValue()"-->
 <script> 
-var adr = 0;
+var adr = "https://jasold.github.io/jasold/phototest.jpg";
+
 window.URL = window.URL || window.webkitURL;
 
 /* fonction qui traite importation avec passage de la taille "h" image créé par "getValue()"*/
@@ -149,6 +150,7 @@ largeur.width = h;
 /*il est conseillé de libérer de la mémoire en effaçant "URL" créé plus haut*/
     window.URL.revokeObjectURL(this.src);
 }
+passage = 1;
 </script>
  
 <!--le "choix" désigne par comparaison avec "case" du switch et quelle filtre on met sur image téléchargee. le code "lumopac" associe 2 filtres, brightness et opacity-->
@@ -279,6 +281,7 @@ function changeVignette(idee)
 /*utiliser balise ancre <a href="" /> non liée au DOM, donc ne fait pas partie de la structure HTML du projet mais existe (fonction importFile, preview.src=adr)comme objet JavaScript*/
 function telecharge()
 {
+
 var name="fichier tele";
   const anchor = document.createElement('a')
   anchor.href = adr;
